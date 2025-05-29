@@ -1,6 +1,6 @@
 package config
 
-type Config interface {
+type AuthConfig interface {
 	AuthDatabaseDSN() string
 	AuthPort() string
 }

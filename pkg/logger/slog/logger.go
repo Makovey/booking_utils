@@ -20,6 +20,11 @@ func (l *Logger) Infof(format string, args ...any) {
 	l.Info(message)
 }
 
+func (l *Logger) Warnf(format string, args ...any) {
+	message := fmt.Sprintf(format, args...)
+	l.Warn(message)
+}
+
 func NewLogger() *Logger {
 	return &Logger{
 		slog.New(slog.NewJSONHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelInfo})),
